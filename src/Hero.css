@@ -1,0 +1,26 @@
+.hero--container {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    margin-top: 90px;
+    flex-direction: column;
+}
+
+.heroimg {
+    width: 100%;
+    max-width: 600px;
+
+}
+
+.hero-content {
+    padding-top: 50px;
+    width: 100%;
+    max-width: 600px;
+
+}
+
+
+* {
+    /* outline: 1px solid green; */
+}
