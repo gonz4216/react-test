@@ -3,15 +3,17 @@ import './Cards.css'
 
 
 const Cards = (props) => {
-    console.log(props)
+    // console.log(props)
     return (
         <>
             <div className="row">
                 <div className="cards--container">
                     <div className="cards-wrapper">
-                        <img src={`./images/${props.img}`} className="card--image" />
+                        <img src={props.img} className="card--image" />
                         <div className="cards-content">
-                            <h1>{props.name}</h1>
+                           <p>{props.rating}</p>
+                           <p>{props.reviewCount} ~ {props.country}</p>
+                           
                         </div>
                     </div>
                 </div>
