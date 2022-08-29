@@ -1,18 +1,39 @@
 import React from 'react'
+import { useState } from 'react'
 import './Hero.css'
-import heroImg from './images/Group 77.png'
 const Hero = () => {
+const [title, setTitle] = useState('')
+const [date, setDate] = useState('')
+const resetForm = () => {
+  setTitle('')
+  setDate('')
+}
+
+const handleSubmit = (e) => {
+e.prevent.default()
+
+const event = {
+  title: title,
+  date: date,
+  id: Math.floor(Math.random() * 10000)
+}
+}
   return (
     <>
-    <div className="row">
-        <div className="hero--container">
-            <img src={heroImg}  alt="" className='heroimg' />
-        </div>
-        <div className="hero-content">
-                <h1 className='header-hero'>Online Experiances</h1>
-                <p className='para-hero'>olestias a quidem reiciendis libero excepturi voluptate eius? Ea nostrum eligendi quos sit tempora.</p>
-            </div>
-    </div>
+      <form className='new-event-form' onSubmit={handleSubmit}>
+        <label>
+          <span>Event Title:</span>
+          <input type="text" 
+          onChange={(e) => setTitle(e.target.value)} 
+          value={title} />
+        </label>
+        <label>
+          <span>Event Date</span>
+          <input type="date" onChange={(e) => setDate(e.target.value)}/>
+        </label>
+        <button>Submit</button>
+        
+      </form>
     </>
   )
 }
